@@ -216,6 +216,65 @@ public class MarcasFactory {
 
 
 
+        marca = new Marca();
+        marca.setMarcaName("Solla");
+        drawableList = new ArrayList<Integer>();
+        drawableList.add((R.drawable.solla_1));
+        drawableList.add((R.drawable.solla_2));
+        drawableList.add((R.drawable.solla_3));
+        drawableList.add((R.drawable.solla_4));
+        drawableList.add((R.drawable.solla_5));
+        marca.setImagesClue(drawableList);
+        this.marcasList.add(marca);
+
+        marca = new Marca();
+        marca.setMarcaName("Teleantioquia");
+        drawableList = new ArrayList<Integer>();
+        drawableList.add((R.drawable.teleantioquia_1));
+        drawableList.add((R.drawable.teleantioquia_2));
+        drawableList.add((R.drawable.teleantioquia_3));
+        drawableList.add((R.drawable.teleantioquia_4));
+        drawableList.add((R.drawable.teleantioquia_5));
+        marca.setImagesClue(drawableList);
+        this.marcasList.add(marca);
+
+
+        marca = new Marca();
+        marca.setMarcaName("Uff Movil");
+        drawableList = new ArrayList<Integer>();
+        drawableList.add((R.drawable.uff_movil_1));
+        drawableList.add((R.drawable.uff_movil_2));
+        drawableList.add((R.drawable.uff_movil_3));
+        drawableList.add((R.drawable.uff_movil_4));
+        drawableList.add((R.drawable.uff_movil_5));
+        marca.setImagesClue(drawableList);
+        this.marcasList.add(marca);
+
+        marca = new Marca();
+        marca.setMarcaName("Viva Colombia");
+        drawableList = new ArrayList<Integer>();
+        drawableList.add((R.drawable.viva_colombia_1));
+        drawableList.add((R.drawable.viva_colombia_2));
+        drawableList.add((R.drawable.viva_colombia_3));
+        drawableList.add((R.drawable.viva_colombia_4));
+        drawableList.add((R.drawable.viva_colombia_5));
+        marca.setImagesClue(drawableList);
+        this.marcasList.add(marca);
+
+
+        marca = new Marca();
+        marca.setMarcaName("Yanbal");
+        drawableList = new ArrayList<Integer>();
+        drawableList.add((R.drawable.yanbal_1));
+        drawableList.add((R.drawable.yanbal_2));
+        drawableList.add((R.drawable.yanbal_3));
+        drawableList.add((R.drawable.yanbal_4));
+        drawableList.add((R.drawable.yanbal_5));
+        marca.setImagesClue(drawableList);
+        this.marcasList.add(marca);
+
+
+
     }
 
     public void updateMarca(Marca marca) {
