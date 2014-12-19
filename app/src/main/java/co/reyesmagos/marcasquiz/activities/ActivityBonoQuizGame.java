@@ -48,9 +48,10 @@ public class ActivityBonoQuizGame extends Activity{
         numOptions = 4;
 
 
-        marca = MarcasFactory.getInstance(this).get(0);
+        marca =(Marca) getIntent().getSerializableExtra("Marca");
         this.gameController = new GameController(this, marca);
         this.iconMarca.setImageDrawable(getResources().getDrawable(marca.getImagesClue().get(4)));
+
 
     }
 

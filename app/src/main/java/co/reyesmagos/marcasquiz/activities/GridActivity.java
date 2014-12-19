@@ -1,12 +1,19 @@
 package co.reyesmagos.marcasquiz.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import co.reyesmagos.marcasquiz.R;
+import co.reyesmagos.marcasquiz.adaptadores.CustomGridLayout;
+import co.reyesmagos.marcasquiz.entities.Marca;
+import co.reyesmagos.marcasquiz.mocks.MarcasFactory;
 
 public class GridActivity extends Activity {
 
@@ -16,10 +23,31 @@ public class GridActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid);
+        init();
     }
 
-    public void init(){
+    public void init() {
+        MarcasFactory.getInstance().createMarca();
+
         gridMarcas = (GridView) findViewById(R.id.grid_marcas);
+        CustomGridLayout customGridLayout = new CustomGridLayout(MarcasFactory.getInstance().getMarcasList(),
+                getApplicationContext());
+        gridMarcas.setAdapter(customGridLayout);
+        gridMarcas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Marca marca = (Marca) adapterView.getAdapter().getItem(i);
+                if (!marca.isWasDiscovered()) {
+                    Intent intent = new Intent(getApplicationContext(), ActivityBonoQuizGame.class);
+                    intent.putExtra("Marca", marca);
+                    startActivity(intent);
+                }
+
+
+            }
+        });
+
+
     }
 
 
