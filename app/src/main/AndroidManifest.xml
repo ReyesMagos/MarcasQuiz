@@ -16,13 +16,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="co.reyesmagos.marcasquiz.activities.ActivityGameResume"
             android:label="Resultado">
+
             <intent-filter>
-                <action android:name=".activities.ActivityGameResume"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name=".activities.ActivityGameResume" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activities.GridActivity"
+            android:label="@string/title_activity_grid">
+
         </activity>
     </application>
 
