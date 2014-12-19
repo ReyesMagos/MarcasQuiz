@@ -124,6 +124,29 @@ public class MarcasFactory {
         marca.setImagesClue(drawableList);
         this.marcasList.add(marca);
 
+        marca = new Marca();
+        marca.setMarcaName("Haceb");
+        drawableList = new ArrayList<Integer>();
+        drawableList.add((R.drawable.haceb_1));
+        drawableList.add((R.drawable.haceb_2));
+        drawableList.add((R.drawable.haceb_3));
+        drawableList.add((R.drawable.haceb_4));
+        drawableList.add((R.drawable.haceb_5));
+        marca.setImagesClue(drawableList);
+        this.marcasList.add(marca);
+
+        marca = new Marca();
+        marca.setMarcaName("Haceb");
+        drawableList = new ArrayList<Integer>();
+        drawableList.add((R.drawable.jennos_pizza_1));
+        drawableList.add((R.drawable.jennos_pizza_2));
+        drawableList.add((R.drawable.jennos_pizza_3));
+        drawableList.add((R.drawable.jennos_pizza_4));
+        drawableList.add((R.drawable.jennos_pizza_5));
+        marca.setImagesClue(drawableList);
+        this.marcasList.add(marca);
+
+
 
     }
 
