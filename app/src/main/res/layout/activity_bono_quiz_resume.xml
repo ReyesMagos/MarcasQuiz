@@ -6,7 +6,7 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="240dip"
@@ -22,7 +22,25 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Medium Text"
             android:id="@+id/txt_name_marca_discovered"
+            android:textSize="35sp"
+            android:textStyle="bold|italic"
             android:layout_gravity="center"
-            android:layout_marginTop="25dip"/>
+            android:layout_marginTop="25dip"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/ic_launcher"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dip"
+            android:onClick="onClickGameResume"/>
     </LinearLayout>
 </LinearLayout>
