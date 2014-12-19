@@ -25,7 +25,7 @@ public class BonoQuizGameProcess {
         return nameEquals;
     }
 
-    public Drawable getImageClue(Marca marca, int oportunity) {
+    public Integer getImageClue(Marca marca, int oportunity) {
         switch (oportunity) {
             case 0:
                 return marca.getImagesClue().get(4);

@@ -1,6 +1,7 @@
 package co.reyesmagos.marcasquiz.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Menu;
@@ -11,13 +12,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Serializable;
+
 import co.reyesmagos.marcasquiz.R;
 import co.reyesmagos.marcasquiz.controller.GameController;
 import co.reyesmagos.marcasquiz.entities.Marca;
 import co.reyesmagos.marcasquiz.mocks.MarcasFactory;
 
 
-public class ActivityBonoQuizGame extends Activity {
+public class ActivityBonoQuizGame extends Activity{
 
     //private Chronometer timeChronometer;
     private TextView timeTxt;
@@ -47,7 +50,7 @@ public class ActivityBonoQuizGame extends Activity {
 
         marca = MarcasFactory.getInstance(this).get(0);
         this.gameController = new GameController(this, marca);
-        this.iconMarca.setImageDrawable(marca.getImagesClue().get(4));
+        this.iconMarca.setImageDrawable(getResources().getDrawable(marca.getImagesClue().get(4)));
 
     }
 
@@ -88,7 +91,8 @@ public class ActivityBonoQuizGame extends Activity {
             public void onFinish() {
                 numOptions--;
                 if(numOptions != -1){
-                    iconMarca.setImageDrawable(marca.getImagesClue().get(numOptions));
+                    //iconMarca.setImageDrawable(marca.getImagesClue().get(numOptions));
+                    iconMarca.setImageDrawable(getResources().getDrawable(marca.getImagesClue().get(numOptions)));
                     setCountDownTimer(30000, 1000);
                 }else{
                     timeTxt.setText("Ganó");
@@ -106,16 +110,22 @@ public class ActivityBonoQuizGame extends Activity {
             numOptions--;
             if (numOptions != -1) {
 
-                this.iconMarca.setImageDrawable(marca.getImagesClue().get(numOptions));
+                //this.iconMarca.setImageDrawable(marca.getImagesClue().get(numOptions));
+                this.iconMarca.setImageDrawable(getResources().getDrawable(marca.getImagesClue().get(numOptions)));
             } else {
 
                 Toast.makeText(this, "Felicidades ganó", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(this, ActivityGameResume.class);
+                i.putExtra("Marca", marca);
 
                 numOptions = 0;
+                startActivity(i);
             }
         } else {
             Toast.makeText(this, "Felicidades ganó", Toast.LENGTH_LONG).show();
-
+            Intent i = new Intent(this, ActivityGameResume.class);
+            i.putExtra("Marca", marca);
+            startActivity(i);
         }
 
     }

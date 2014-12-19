@@ -2,18 +2,22 @@ package co.reyesmagos.marcasquiz.entities;
 
 import android.graphics.drawable.Drawable;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Alexis-PC on 18/12/2014.
  */
-public class Marca {
+public class Marca implements Serializable {
+
+
+    private static final long serialVersionUID = 1L;
 
     private String marcaName;
-    private List<Drawable> imagesClue;
+    private List<Integer> imagesClue;
     private boolean wasDiscovered;
 
-    public Marca(String marcaName, List<Drawable> imagesClue) {
+    public Marca(String marcaName, List<Integer> imagesClue) {
         this.marcaName = marcaName;
         this.imagesClue = imagesClue;
         this.wasDiscovered = false;
@@ -31,11 +35,11 @@ public class Marca {
         this.marcaName = marcaName;
     }
 
-    public List<Drawable> getImagesClue() {
+    public List<Integer> getImagesClue() {
         return imagesClue;
     }
 
-    public void setImagesClue(List<Drawable> imagesClue) {
+    public void setImagesClue(List<Integer> imagesClue) {
         this.imagesClue = imagesClue;
     }
 

@@ -29,12 +29,12 @@ public class MarcasFactory {
 
         Marca marca = new Marca();
         marca.setMarcaName("Exito");
-        List<Drawable>drawableList = new ArrayList<Drawable>();
-        drawableList.add(context.getResources().getDrawable(R.drawable.exito_1));
-        drawableList.add(context.getResources().getDrawable(R.drawable.exito_2));
-        drawableList.add(context.getResources().getDrawable(R.drawable.exito_3));
-        drawableList.add(context.getResources().getDrawable(R.drawable.exito_4));
-        drawableList.add(context.getResources().getDrawable(R.drawable.exito_5));
+        List<Integer>drawableList = new ArrayList<Integer>();
+        drawableList.add((R.drawable.exito_1));
+        drawableList.add((R.drawable.exito_2));
+        drawableList.add((R.drawable.exito_3));
+        drawableList.add((R.drawable.exito_4));
+        drawableList.add((R.drawable.exito_5));
         marca.setImagesClue(drawableList);
 
         listMarca.add(marca);
