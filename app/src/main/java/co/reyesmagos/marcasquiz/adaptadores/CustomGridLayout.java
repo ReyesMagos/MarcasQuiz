@@ -63,9 +63,11 @@ public class CustomGridLayout extends BaseAdapter {
         }
         Marca m = getItem(position);
         if (m.isWasDiscovered())
-            viewHolder.imMarca.setImageDrawable(m.getImagesClue().get(0));
+            viewHolder.imMarca.setImageDrawable(context.getResources().
+                    getDrawable(m.getImagesClue().get(0)));
         else
-            viewHolder.imMarca.setImageDrawable(m.getImagesClue().get(m.getImagesClue().size() - 1));
+            viewHolder.imMarca.setImageDrawable(context.getResources().
+                    getDrawable(m.getImagesClue().get(m.getImagesClue().size() - 1)));
 
 
         return convertView;
