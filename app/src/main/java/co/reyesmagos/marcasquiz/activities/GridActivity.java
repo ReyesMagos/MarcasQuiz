@@ -23,12 +23,11 @@ public class GridActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid);
+        MarcasFactory.getInstance().createMarca();
         init();
     }
 
     public void init() {
-        MarcasFactory.getInstance().createMarca();
-
         gridMarcas = (GridView) findViewById(R.id.grid_marcas);
         CustomGridLayout customGridLayout = new CustomGridLayout(MarcasFactory.getInstance().getMarcasList(),
                 getApplicationContext());
@@ -42,14 +41,18 @@ public class GridActivity extends Activity {
                     intent.putExtra("Marca", marca);
                     startActivity(intent);
                 }
-
-
             }
         });
 
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        init();
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
