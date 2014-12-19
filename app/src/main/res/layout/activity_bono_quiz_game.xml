@@ -21,13 +21,13 @@
             android:id="@+id/txt_time"
             android:textStyle="bold"
             android:layout_gravity="right"
-            android:gravity="right"/>
+            android:gravity="right" />
 
-        <Chronometer
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/chronometer_time"
-            android:layout_gravity="left"/>
+            android:text="New Text"
+            android:id="@+id/txt_time_countdown" />
     </LinearLayout>
 
     <ImageView
@@ -35,7 +35,7 @@
         android:layout_height="280dip"
         android:id="@+id/marca_image_view"
         android:src="@drawable/ic_launcher"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -43,7 +43,10 @@
         android:id="@+id/editText"
         android:layout_gravity="center"
         android:layout_marginTop="20dip"
-        android:hint="Ingrese el nombre de la marca"/>
+        android:hint="Ingrese el nombre de la marca"
+        android:textAlignment="center"
+        android:gravity="top"
+        />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -51,6 +54,6 @@
         android:id="@+id/imageView"
         android:src="@drawable/ic_launcher"
         android:layout_gravity="center"
-        android:layout_marginTop="25dip"/>
+        android:layout_marginTop="25dip" />
 
 </LinearLayout>
