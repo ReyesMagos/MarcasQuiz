@@ -13,8 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.Serializable;
-
 import co.reyesmagos.marcasquiz.R;
 import co.reyesmagos.marcasquiz.controller.GameController;
 import co.reyesmagos.marcasquiz.entities.Marca;
@@ -49,7 +47,9 @@ public class ActivityBonoQuizGame extends Activity{
         numOptions = 4;
 
 
+
         marca =(Marca) getIntent().getSerializableExtra("Marca");
+
         this.gameController = new GameController(this, marca);
         this.iconMarca.setImageDrawable(getResources().getDrawable(marca.getImagesClue().get(4)));
 
@@ -93,14 +93,17 @@ public class ActivityBonoQuizGame extends Activity{
             public void onFinish() {
                 numOptions--;
                 if(numOptions != -1){
-                    //iconMarca.setImageDrawable(marca.getImagesClue().get(numOptions));
-                    iconMarca.setImageDrawable(getResources().getDrawable(marca.getImagesClue().get(numOptions)));
+                    iconMarca.setImageDrawable(getResources().getDrawable(marca.getImagesClue()
+                            .get(numOptions)));
                     setCountDownTimer(30000, 1000);
                 }else{
                     timeTxt.setText("Ganó");
+                    Intent i = new Intent(getApplicationContext(), ActivityGameResume.class);
+                    i.putExtra("Marca", marca);
                     numOptions = 0;
+                    marca.setWasDiscovered(true);
+                    startActivity(i);
                 }
-
             }
         }.start();
 
@@ -112,8 +115,8 @@ public class ActivityBonoQuizGame extends Activity{
             numOptions--;
             if (numOptions != -1) {
 
-                //this.iconMarca.setImageDrawable(marca.getImagesClue().get(numOptions));
-                this.iconMarca.setImageDrawable(getResources().getDrawable(marca.getImagesClue().get(numOptions)));
+                this.iconMarca.setImageDrawable(getResources().getDrawable(marca.getImagesClue()
+                        .get(numOptions)));
             } else {
 
                 Toast.makeText(this, "Felicidades ganó", Toast.LENGTH_LONG).show();
@@ -121,12 +124,14 @@ public class ActivityBonoQuizGame extends Activity{
                 i.putExtra("Marca", marca);
                 marca.setWasDiscovered(true);
                 numOptions = 0;
+                marca.setWasDiscovered(true);
                 startActivity(i);
             }
         } else {
             Toast.makeText(this, "Felicidades ganó", Toast.LENGTH_LONG).show();
             Intent i = new Intent(this, ActivityGameResume.class);
             i.putExtra("Marca", marca);
+            marca.setWasDiscovered(true);
             startActivity(i);
         }
 
