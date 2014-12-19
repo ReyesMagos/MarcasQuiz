@@ -17,13 +17,13 @@ public class MarcasFactory {
     public static MarcasFactory instance;
     private List<Marca> marcasList;
 
-    private MarcasFactory(){
+    private MarcasFactory() {
 
 
     }
 
-    public static MarcasFactory getInstance(){
-        if(instance==null)
+    public static MarcasFactory getInstance() {
+        if (instance == null)
             instance = new MarcasFactory();
         return instance;
     }
@@ -40,13 +40,13 @@ public class MarcasFactory {
         this.marcasList = marcasList;
     }
 
-    public void createMarca(){
+    public void createMarca() {
 
 
-       this.marcasList = new ArrayList<Marca>();
+        this.marcasList = new ArrayList<Marca>();
         Marca marca = new Marca();
         marca.setMarcaName("Exito");
-        List<Integer>drawableList = new ArrayList<Integer>();
+        List<Integer> drawableList = new ArrayList<Integer>();
         drawableList.add((R.drawable.exito_1));
         drawableList.add((R.drawable.exito_2));
         drawableList.add((R.drawable.exito_3));
@@ -80,7 +80,7 @@ public class MarcasFactory {
         this.marcasList.add(marca);
 
         marca = new Marca();
-        marca.setMarcaName("Avianca");
+        marca.setMarcaName("Baloto");
         drawableList = new ArrayList<Integer>();
         drawableList.add((R.drawable.baloto_1));
         drawableList.add((R.drawable.baloto_2));
@@ -90,19 +90,57 @@ public class MarcasFactory {
         marca.setImagesClue(drawableList);
         this.marcasList.add(marca);
 
+        marca = new Marca();
+        marca.setMarcaName("Bancolombia");
+        drawableList = new ArrayList<Integer>();
+        drawableList.add((R.drawable.bancolombia_1));
+        drawableList.add((R.drawable.bancolombia_2));
+        drawableList.add((R.drawable.bancolombia_3));
+        drawableList.add((R.drawable.bancolombia_4));
+        drawableList.add((R.drawable.bancolombia_5));
+        marca.setImagesClue(drawableList);
+        this.marcasList.add(marca);
+
+        marca = new Marca();
+        marca.setMarcaName("Colombina");
+        drawableList = new ArrayList<Integer>();
+        drawableList.add((R.drawable.colombina_1));
+        drawableList.add((R.drawable.colombina_2));
+        drawableList.add((R.drawable.colombina_3));
+        drawableList.add((R.drawable.colombina_4));
+        drawableList.add((R.drawable.colombina_5));
+        marca.setImagesClue(drawableList);
+        this.marcasList.add(marca);
+
+
+        marca = new Marca();
+        marca.setMarcaName("Flamingo");
+        drawableList = new ArrayList<Integer>();
+        drawableList.add((R.drawable.flamingo_1));
+        drawableList.add((R.drawable.flamingo_2));
+        drawableList.add((R.drawable.flamingo_3));
+        drawableList.add((R.drawable.flamingo_4));
+        drawableList.add((R.drawable.flamingo_5));
+        marca.setImagesClue(drawableList);
+        this.marcasList.add(marca);
 
 
     }
 
-    public void updateMarca(Marca marca){
-        for(Marca m: this.marcasList){
-            if(m.getMarcaName().equals(marca.getMarcaName())){
-                m=marca;
+    public void updateMarca(Marca marca) {
+        int i = 0;
+        List<Marca> axu = new ArrayList<Marca>();
+        for (Marca m : this.marcasList) {
+
+            if (m.getMarcaName().equals(marca.getMarcaName())) {
+                axu.add(marca);
+            } else {
+                axu.add(marcasList.get(i));
             }
+            i++;
         }
+        this.marcasList = axu;
     }
-
-
 
 
 }

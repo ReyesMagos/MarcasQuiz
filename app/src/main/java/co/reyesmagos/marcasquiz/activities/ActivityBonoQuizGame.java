@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -122,6 +123,7 @@ public class ActivityBonoQuizGame extends Activity{
                 Toast.makeText(this, "Felicidades ganó", Toast.LENGTH_LONG).show();
                 Intent i = new Intent(this, ActivityGameResume.class);
                 i.putExtra("Marca", marca);
+                marca.setWasDiscovered(true);
                 numOptions = 0;
                 marca.setWasDiscovered(true);
                 MarcasFactory.getInstance().updateMarca(marca);

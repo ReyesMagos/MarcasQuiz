@@ -43,15 +43,19 @@ public class GridActivity extends Activity {
                 }
             }
         });
-
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        init();
+        updateGrid();
 
+    }
+
+    public void updateGrid(){
+        CustomGridLayout customGridLayout = new CustomGridLayout(MarcasFactory.getInstance().getMarcasList(),
+                getApplicationContext());
+        gridMarcas.setAdapter(customGridLayout);
     }
 
     @Override
