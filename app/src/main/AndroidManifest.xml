@@ -16,9 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activities.ActivityGameResume"
             android:label="Resultado">
-
+            </activity>
+        <activity
+            android:name=".activities.GridActivity"
+            android:label="@string/title_activity_grid" >
         </activity>
     </application>
 
