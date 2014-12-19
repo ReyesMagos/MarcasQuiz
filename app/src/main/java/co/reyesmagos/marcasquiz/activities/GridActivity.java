@@ -11,6 +11,7 @@ import co.reyesmagos.marcasquiz.R;
 public class GridActivity extends Activity {
 
     private GridView gridMarcas;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
