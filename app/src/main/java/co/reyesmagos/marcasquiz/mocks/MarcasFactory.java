@@ -90,6 +90,16 @@ public class MarcasFactory {
         marca.setImagesClue(drawableList);
         this.marcasList.add(marca);
 
+
+
+    }
+
+    public void updateMarca(Marca marca){
+        for(Marca m: this.marcasList){
+            if(m.getMarcaName().equals(marca.getMarcaName())){
+                m=marca;
+            }
+        }
     }
 
 

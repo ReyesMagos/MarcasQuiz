@@ -118,7 +118,6 @@ public class ActivityBonoQuizGame extends Activity{
                 Toast.makeText(this, "Felicidades ganó", Toast.LENGTH_LONG).show();
                 Intent i = new Intent(this, ActivityGameResume.class);
                 i.putExtra("Marca", marca);
-
                 numOptions = 0;
                 startActivity(i);
             }
