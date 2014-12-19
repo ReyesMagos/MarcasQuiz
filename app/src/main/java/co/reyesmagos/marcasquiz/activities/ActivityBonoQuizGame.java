@@ -101,6 +101,7 @@ public class ActivityBonoQuizGame extends Activity{
                     i.putExtra("Marca", marca);
                     numOptions = 0;
                     marca.setWasDiscovered(true);
+                    MarcasFactory.getInstance().updateMarca(marca);
                     startActivity(i);
                 }
             }
@@ -123,6 +124,7 @@ public class ActivityBonoQuizGame extends Activity{
                 i.putExtra("Marca", marca);
                 numOptions = 0;
                 marca.setWasDiscovered(true);
+                MarcasFactory.getInstance().updateMarca(marca);
                 startActivity(i);
             }
         } else {
@@ -130,6 +132,7 @@ public class ActivityBonoQuizGame extends Activity{
             Intent i = new Intent(this, ActivityGameResume.class);
             i.putExtra("Marca", marca);
             marca.setWasDiscovered(true);
+            MarcasFactory.getInstance().updateMarca(marca);
             startActivity(i);
         }
 
