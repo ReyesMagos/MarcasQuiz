@@ -100,6 +100,7 @@ public class ActivityBonoQuizGame extends Activity{
                     Intent i = new Intent(getApplicationContext(), ActivityGameResume.class);
                     i.putExtra("Marca", marca);
                     numOptions = 0;
+                    marca.setWasDiscovered(true);
                     startActivity(i);
                 }
             }
