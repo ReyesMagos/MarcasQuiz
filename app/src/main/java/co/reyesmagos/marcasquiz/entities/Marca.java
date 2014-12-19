@@ -11,13 +11,15 @@ public class Marca {
 
     private String marcaName;
     private List<Drawable> imagesClue;
+    private boolean wasDiscovered;
 
     public Marca(String marcaName, List<Drawable> imagesClue) {
         this.marcaName = marcaName;
         this.imagesClue = imagesClue;
+        this.wasDiscovered = false;
     }
 
-    public Marca(){
+    public Marca() {
 
     }
 
@@ -35,5 +37,13 @@ public class Marca {
 
     public void setImagesClue(List<Drawable> imagesClue) {
         this.imagesClue = imagesClue;
+    }
+
+    public boolean isWasDiscovered() {
+        return wasDiscovered;
+    }
+
+    public void setWasDiscovered(boolean wasDiscovered) {
+        this.wasDiscovered = wasDiscovered;
     }
 }

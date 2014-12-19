@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import co.reyesmagos.marcasquiz.R;
 import co.reyesmagos.marcasquiz.controller.GameController;
@@ -85,7 +86,14 @@ public class ActivityBonoQuizGame extends Activity {
 
             @Override
             public void onFinish() {
-                timeTxt.setText("Perdiste");
+                numOptions--;
+                if(numOptions != -1){
+                    iconMarca.setImageDrawable(marca.getImagesClue().get(numOptions));
+                    setCountDownTimer(30000, 1000);
+                }else{
+                    timeTxt.setText("Ganó");
+                    numOptions = 0;
+                }
 
             }
         }.start();
@@ -94,10 +102,19 @@ public class ActivityBonoQuizGame extends Activity {
 
     public void onCompareNameClick(View view) {
         String nameIngressed = nameIngressedTxt.getText().toString();
-        if(!gameController.compareNames(marca, nameIngressed)){
+        if (!gameController.compareNames(marca, nameIngressed)) {
             numOptions--;
-            this.iconMarca.setImageDrawable(marca.getImagesClue().get(numOptions));
-        }else{
+            if (numOptions != -1) {
+
+                this.iconMarca.setImageDrawable(marca.getImagesClue().get(numOptions));
+            } else {
+
+                Toast.makeText(this, "Felicidades ganó", Toast.LENGTH_LONG).show();
+
+                numOptions = 0;
+            }
+        } else {
+            Toast.makeText(this, "Felicidades ganó", Toast.LENGTH_LONG).show();
 
         }
 
