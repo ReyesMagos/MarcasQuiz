@@ -1,17 +1,17 @@
 package co.reyesmagos.marcasquiz.activities;
 
 import android.app.Activity;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Chronometer;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import co.reyesmagos.marcasquiz.R;
+import co.reyesmagos.marcasquiz.controller.GameController;
 import co.reyesmagos.marcasquiz.entities.Marca;
 import co.reyesmagos.marcasquiz.mocks.MarcasFactory;
 
@@ -23,6 +23,9 @@ public class ActivityBonoQuizGame extends Activity {
     private ImageView iconMarca;
     private EditText nameIngressedTxt;
     private ImageView btnCompare;
+    private static int numOptions;
+    private Marca marca;
+    private GameController gameController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,16 +34,18 @@ public class ActivityBonoQuizGame extends Activity {
         initComponents();
     }
 
-    public void initComponents(){
-       // this.timeChronometer = (Chronometer)super.findViewById(R.id.chronometer_time);
-        this.timeTxt = (TextView)super.findViewById(R.id.txt_time_countdown);
+    public void initComponents() {
+        // this.timeChronometer = (Chronometer)super.findViewById(R.id.chronometer_time);
+        this.timeTxt = (TextView) super.findViewById(R.id.txt_time_countdown);
         setCountDownTimer(40000, 1000);
-        this.iconMarca = (ImageView)super.findViewById(R.id.marca_image_view);
-        this.nameIngressedTxt = (EditText)super.findViewById(R.id.editText);
-        this.btnCompare = (ImageView)super.findViewById(R.id.imageView);
+        this.iconMarca = (ImageView) super.findViewById(R.id.marca_image_view);
+        this.nameIngressedTxt = (EditText) super.findViewById(R.id.editText);
+        this.btnCompare = (ImageView) super.findViewById(R.id.imageView);
+        numOptions = 4;
 
-        Marca marca = MarcasFactory.getInstance(this).get(0);
 
+        marca = MarcasFactory.getInstance(this).get(0);
+        this.gameController = new GameController(this, marca);
         this.iconMarca.setImageDrawable(marca.getImagesClue().get(4));
 
     }
@@ -71,7 +76,7 @@ public class ActivityBonoQuizGame extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void setCountDownTimer(long millinInFuture, final long countdownInterval){
+    public void setCountDownTimer(long millinInFuture, final long countdownInterval) {
         CountDownTimer countDownTimer = new CountDownTimer(millinInFuture, countdownInterval) {
             @Override
             public void onTick(long l) {
@@ -84,6 +89,17 @@ public class ActivityBonoQuizGame extends Activity {
 
             }
         }.start();
+
+    }
+
+    public void onCompareNameClick(View view) {
+        String nameIngressed = nameIngressedTxt.getText().toString();
+        if(!gameController.compareNames(marca, nameIngressed)){
+            numOptions--;
+            this.iconMarca.setImageDrawable(marca.getImagesClue().get(numOptions));
+        }else{
+
+        }
 
     }
 

@@ -1,7 +1,6 @@
 package co.reyesmagos.marcasquiz.controller;
 
 import android.content.Context;
-import android.widget.ImageView;
 
 import co.reyesmagos.marcasquiz.entities.Marca;
 import co.reyesmagos.marcasquiz.game.process.BonoQuizGameProcess;
@@ -22,9 +21,10 @@ public class GameController {
         this.marcaSelected = marca;
     }
 
-    public void compareNames(Marca marca, String nameIngressed, ImageView imageView) {
-        int opportunities = 0;
+    public boolean compareNames(Marca marca, String nameIngressed) {
+        boolean isEqual = bonoQuizGameProcess.verifyName(marca, nameIngressed);
 
+        return isEqual;
     }
 
 
