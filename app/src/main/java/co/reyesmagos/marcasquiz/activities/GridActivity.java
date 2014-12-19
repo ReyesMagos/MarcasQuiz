@@ -23,6 +23,7 @@ public class GridActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid);
+        if(MarcasFactory.getInstance().getMarcasList()==null)
         MarcasFactory.getInstance().createMarca();
         init();
     }
