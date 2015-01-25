@@ -14,6 +14,7 @@ import co.reyesmagos.marcasquiz.R;
 import co.reyesmagos.marcasquiz.adaptadores.CustomGridLayout;
 import co.reyesmagos.marcasquiz.entities.Marca;
 import co.reyesmagos.marcasquiz.mocks.MarcasFactory;
+import co.reyesmagos.marcasquiz.services.PostRestFul;
 
 public class GridActivity extends Activity {
 
@@ -26,6 +27,8 @@ public class GridActivity extends Activity {
         if(MarcasFactory.getInstance().getMarcasList()==null)
         MarcasFactory.getInstance().createMarca();
         init();
+        PostRestFul postRestFul = new PostRestFul();
+        postRestFul.execute();
     }
 
     public void init() {
