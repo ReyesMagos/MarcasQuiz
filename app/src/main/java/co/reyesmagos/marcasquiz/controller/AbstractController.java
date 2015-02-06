@@ -14,7 +14,7 @@ public abstract class AbstractController  {
         this.activity = activity;
     }
 
-    private void changeActivity(Class<?> destinyClass){
+    public void changeActivity(Class<?> destinyClass){
         Intent i = new Intent(getActivity(), destinyClass);
         getActivity().startActivity(i);
     }

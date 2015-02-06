@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
@@ -11,11 +12,13 @@ import java.util.ArrayList;
 
 import co.reyesmagos.marcasquiz.R;
 import co.reyesmagos.marcasquiz.adaptadores.CustomFilterAdapter;
+import co.reyesmagos.marcasquiz.controller.LoginController;
 
 public class LoginActivity extends Activity {
 
     private AutoCompleteTextView txtEmail;
     private TextView txtPassword;
+    private LoginController loginController;
 
 
 
@@ -23,6 +26,7 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        loginController= new LoginController(this);
         initComponents();
     }
 
@@ -61,5 +65,9 @@ public class LoginActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void signUp(View view){
+        loginController.changeActivity(SingUpActivity.class);
     }
 }

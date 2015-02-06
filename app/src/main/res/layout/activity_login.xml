@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_sign_up"
             android:layout_weight="1"
+            android:onClick="signUp"
             android:src="@drawable/ic_launcher"
             android:layout_gravity="center_horizontal" />
 
