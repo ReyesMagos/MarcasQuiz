@@ -8,9 +8,13 @@ import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 import co.reyesmagos.marcasquiz.R;
 import co.reyesmagos.marcasquiz.adaptadores.CustomClearSpinnerAdapter;
+import co.reyesmagos.marcasquiz.adaptadores.CustomFilterAdapter;
 import co.reyesmagos.marcasquiz.controller.SignUpController;
 import co.reyesmagos.marcasquiz.services.PostRestFul;
 
@@ -27,6 +31,16 @@ public class SingUpActivity extends Activity {
     private EditText txtPassword;
     private EditText txtPasswordConfirmation;
     private SignUpController signUpController;
+    private String name;
+    private String lastname;
+    private String age;
+    private String phone;
+    private String mobile;
+    private String idNumber;
+    private String idType;
+    private String email;
+    private String password;
+    private String passwordConfirmation;
 
 
     @Override
@@ -50,15 +64,42 @@ public class SingUpActivity extends Activity {
                 getApplicationContext(), signUpController);
         spIdType.setAdapter(customClearSpinnerAdapter);
 
+    }
+
+    public void initComponents2() {
+        txtEmail = (AutoCompleteTextView) findViewById(R.id.txt_email);
+        ArrayList arraymails = new ArrayList();
+        arraymails.add("@gmail.com");
+        arraymails.add("@hotmail.com");
+        arraymails.add("@yahoo.com");
+        arraymails.add("@outlook.com");
+        CustomFilterAdapter adapter = new CustomFilterAdapter(this, android.R.layout.simple_list_item_1, arraymails);
+        txtEmail.setAdapter(adapter);
+        txtPassword = (EditText) findViewById(R.id.txt_password);
+        txtPasswordConfirmation = (EditText) findViewById(R.id.txt_password_confirmation);
+    }
+
+
+    public void showNextSignUpLayout(View view) {
+        name = txtName.getText().toString();
+        lastname = txtLastname.getText().toString();
+        age = txtAge.getText().toString();
+        phone = txtPhone.getText().toString();
+        mobile = txtMobile.getText().toString();
+        idNumber = txtIdNumber.getText().toString();
+        idType = spIdType.getItemAtPosition(spIdType.getSelectedItemPosition()).toString();
+        setContentView(R.layout.sign_up_layout2);
+        initComponents2();
 
     }
 
-    public void showNextSignUpLayout(View view) {
-        String name = txtName.getText().toString();
-        String lastname = txtLastname.getText().toString();
-        String age = txtAge.getText().toString();
+    public void singUp(View view) {
+        email = txtEmail.getText().toString();
+        password = txtPassword.getText().toString();
+        passwordConfirmation = txtPasswordConfirmation.getText().toString();
         PostRestFul postRestFul = new PostRestFul();
-        postRestFul.execute(name, lastname, age);
+        postRestFul.execute(name, lastname, age, phone, mobile, idType,
+                idNumber, email, password, passwordConfirmation);
     }
 
 

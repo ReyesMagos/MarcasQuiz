@@ -67,7 +67,7 @@ public class LoginActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void signUp(View view){
+    public void showSignUpActivity(View view){
         loginController.changeActivity(SingUpActivity.class);
     }
 }

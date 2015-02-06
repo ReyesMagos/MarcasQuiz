@@ -3,8 +3,8 @@
 
 
     <string-array name="id_types_array">
-        <item>Cedula</item>
-        <item>Pasaporte</item>
+        <item>cedula</item>
+        <item>pasaporte</item>
 
     </string-array>
 </resources>
