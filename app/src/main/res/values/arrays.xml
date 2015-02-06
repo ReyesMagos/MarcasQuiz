@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="id_types_array">
+        <item>Cedula</item>
+        <item>Pasaporte</item>
+
+    </string-array>
+</resources>

@@ -23,7 +23,7 @@ public class PostRestFul extends AsyncTask<String,String, Boolean>{
 
     @Override
     protected Boolean doInBackground(String... strings) {
-        String urlString = "http://192.168.1.53:1337/user/create/";
+        String urlString = "http://69.50.211.15:1337/user/create/";
         Log.i("Entre","Realizare un post");
         try
         {

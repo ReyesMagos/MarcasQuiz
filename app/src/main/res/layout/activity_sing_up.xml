@@ -10,38 +10,94 @@
     tools:context="co.reyesmagos.marcasquiz.activities.SingUpActivity">
 
 
-    <EditText
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nombre"
-        android:gravity="center"
-        android:layout_marginBottom="20dp"
-        android:id="@+id/txt_name" />
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
 
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Apellido"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:id="@+id/txt_lastname" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Edad"
-        android:inputType="number"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:id="@+id/txt_age" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/txt_name" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_sinup"
-        android:src="@drawable/ic_launcher"
-        android:onClick="singUp"
 
-        android:layout_gravity="center" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Apellido"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:id="@+id/txt_lastname" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/age_label"
+                android:inputType="number"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:id="@+id/txt_age" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_label"
+                android:inputType="number"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:id="@+id/txt_phone" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mobile_label"
+                android:inputType="number"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:id="@+id/txt_mobile" />
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email_label"
+                android:id="@+id/txt_email"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sp_id_type" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/id_number_label"
+                android:inputType="number"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:id="@+id/txt_id_number" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_next"
+                android:src="@drawable/ic_launcher"
+                android:onClick="showNextSignUpLayout"
+                android:layout_gravity="center" />
+            </LinearLayout>
+    </ScrollView>
+
+
 </LinearLayout>
