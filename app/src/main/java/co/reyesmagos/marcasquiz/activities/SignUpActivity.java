@@ -18,7 +18,7 @@ import co.reyesmagos.marcasquiz.adaptadores.CustomFilterAdapter;
 import co.reyesmagos.marcasquiz.controller.SignUpController;
 import co.reyesmagos.marcasquiz.services.PostRestFul;
 
-public class SingUpActivity extends Activity {
+public class SignUpActivity extends Activity {
 
     private EditText txtName;
     private EditText txtLastname;
@@ -97,11 +97,15 @@ public class SingUpActivity extends Activity {
         email = txtEmail.getText().toString();
         password = txtPassword.getText().toString();
         passwordConfirmation = txtPasswordConfirmation.getText().toString();
-        PostRestFul postRestFul = new PostRestFul();
-        postRestFul.execute(name, lastname, age, phone, mobile, idType,
-                idNumber, email, password, passwordConfirmation);
+        signUpController.singUp(name,lastname,age,phone,mobile,
+                idType, idNumber, email,password, passwordConfirmation);
+
     }
 
+      public void changeToLayoutOne(){
+          setContentView(R.layout.activity_sing_up);
+          initComponents();
+      }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

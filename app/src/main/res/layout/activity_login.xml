@@ -42,6 +42,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_login"
             android:layout_weight="1"
+            android:onClick="logIn"
             android:src="@drawable/ic_launcher"
             android:layout_gravity="center_horizontal" />
 
@@ -50,6 +51,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_sign_up"
             android:layout_weight="1"
+
             android:onClick="showSignUpActivity"
             android:src="@drawable/ic_launcher"
             android:layout_gravity="center_horizontal" />

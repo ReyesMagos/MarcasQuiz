@@ -12,6 +12,8 @@ import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
+import co.reyesmagos.marcasquiz.controller.AbstractController;
+import co.reyesmagos.marcasquiz.controller.SignUpController;
 
 
 /**
@@ -19,7 +21,11 @@ import org.apache.http.util.EntityUtils;
  */
 public class PostRestFul extends AsyncTask<String,String, Boolean>{
 
+  private AbstractController abstractController;
 
+    public PostRestFul(AbstractController abstractController) {
+        this.abstractController = abstractController;
+    }
 
     @Override
     protected Boolean doInBackground(String... strings) {
@@ -54,7 +60,26 @@ public class PostRestFul extends AsyncTask<String,String, Boolean>{
         }
         catch (Exception ex){
             Log.e("Debug", "error: " + ex.getMessage(), ex);
+            return false;
         }
-        return null;
+        return true;
+    }
+
+
+    @Override
+    protected void onPostExecute(Boolean aBoolean) {
+        super.onPostExecute(aBoolean);
+        if(aBoolean){
+            if(abstractController instanceof SignUpController){
+                SignUpController signUpController= (SignUpController) abstractController;
+                signUpController.processSignUpResponse(true);
+            }
+        }else{
+            if(abstractController instanceof SignUpController){
+                SignUpController signUpController= (SignUpController) abstractController;
+                signUpController.processSignUpResponse(false);
+            }
+        }
+
     }
 }

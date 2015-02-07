@@ -22,5 +22,7 @@
     <string name="id_number_label">Documento Identificacion</string>
     <string name="id_type_label">Tipo Documento Identificacion</string>
     <string name="password_confirmation_label">Confimacion de Contraseña</string>
+    <string name="acept_label">Aceptar</string>
+    <string name="error_label">Error</string>
 
 </resources>

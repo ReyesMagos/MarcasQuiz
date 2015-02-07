@@ -27,8 +27,8 @@ public class GridActivity extends Activity {
         if(MarcasFactory.getInstance().getMarcasList()==null)
         MarcasFactory.getInstance().createMarca();
         init();
-        PostRestFul postRestFul = new PostRestFul();
-        postRestFul.execute();
+        //PostRestFul postRestFul = new PostRestFul();
+        //postRestFul.execute();
     }
 
     public void init() {

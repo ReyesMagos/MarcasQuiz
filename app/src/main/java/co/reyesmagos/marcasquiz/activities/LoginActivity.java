@@ -45,6 +45,12 @@ public class LoginActivity extends Activity {
 
     }
 
+    public void logIn(View view){
+        String email = txtEmail.getText().toString();
+        String password= txtPassword.getText().toString();
+        loginController.logIn(email, password);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -68,6 +74,22 @@ public class LoginActivity extends Activity {
     }
 
     public void showSignUpActivity(View view){
-        loginController.changeActivity(SingUpActivity.class);
+        loginController.changeActivity(SignUpActivity.class);
+    }
+
+    public AutoCompleteTextView getTxtEmail() {
+        return txtEmail;
+    }
+
+    public void setTxtEmail(AutoCompleteTextView txtEmail) {
+        this.txtEmail = txtEmail;
+    }
+
+    public TextView getTxtPassword() {
+        return txtPassword;
+    }
+
+    public void setTxtPassword(TextView txtPassword) {
+        this.txtPassword = txtPassword;
     }
 }
