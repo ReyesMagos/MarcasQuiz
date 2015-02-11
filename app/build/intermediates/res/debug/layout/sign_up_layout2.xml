@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email_label"
+                android:id="@+id/txt_email"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password_label"
+                android:gravity="center"
+                android:inputType="textPassword"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/txt_password" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password_confirmation_label"
+                android:inputType="textPassword"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:id="@+id/txt_password_confirmation" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_sinup"
+                android:src="@drawable/ic_launcher"
+                android:onClick="singUp"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+<!-- From: file:/C:/Users/Alexis-PC/Documents/GitHub/MarcasQuiz/app/src/main/res/layout/sign_up_layout2.xml -->

@@ -11,7 +11,7 @@ import co.reyesmagos.marcasquiz.R;
 /**
  * Created by oscargallon on 5/02/15.
  */
-public abstract class AbstractController  {
+public abstract class AbstractController {
 
     private Activity activity;
     private ProgressDialog progressDialog;
@@ -20,12 +20,12 @@ public abstract class AbstractController  {
         this.activity = activity;
     }
 
-    public void changeActivity(Class<?> destinyClass){
+    public void changeActivity(Class<?> destinyClass) {
         Intent i = new Intent(getActivity(), destinyClass);
         getActivity().startActivity(i);
     }
 
-    public void showProgressdialog(String title, String message, Boolean isCancelable){
+    public void showProgressdialog(String title, String message, Boolean isCancelable) {
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setTitle(title);
         progressDialog.setMessage(message);
@@ -34,23 +34,21 @@ public abstract class AbstractController  {
 
     }
 
-    public  void dissmissProgressDialog(){
+    public void dissmissProgressDialog() {
         progressDialog.dismiss();
     }
 
-    public void showAlertDialog(String title, String message){
+    public void showAlertDialog(String title, String message) {
         AlertDialog alertDialog = new AlertDialog.Builder(getActivity())
-        .setTitle(title).setMessage(message)
-        .setPositiveButton(R.string.acept_label, new DialogInterface.OnClickListener() {
-        @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+                .setTitle(title).setMessage(message)
+                .setPositiveButton(R.string.acept_label, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-            }
-        }).show();
+                    }
+                }).show();
 
     }
-
-
 
     public Activity getActivity() {
         return activity;

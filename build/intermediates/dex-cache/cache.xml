@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Alexis-PC\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpcore\4.2.2\b76bee23cd3f3ee9b98bc7c2c14670e821ddbbfd\httpcore-4.2.2.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b76bee23cd3f3ee9b98bc7c2c14670e821ddbbfd">
+        <dex dex="C:\Users\Alexis-PC\Documents\GitHub\MarcasQuiz\app\build\intermediates\pre-dexed\debug\httpcore-4.2.2-f5f5cee7146854c5f438990a8d3e63d74fc10c82.jar" />
+    </item>
+    <item
+        jar="C:\Users\Alexis-PC\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpmime\4.2.3\118ae1bc7f3aeeddfe564f0edfd79c11d09d17d1\httpmime-4.2.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="118ae1bc7f3aeeddfe564f0edfd79c11d09d17d1">
+        <dex dex="C:\Users\Alexis-PC\Documents\GitHub\MarcasQuiz\app\build\intermediates\pre-dexed\debug\httpmime-4.2.3-5b72da898ed7962857197486ede72f88e62728fa.jar" />
+    </item>
+
+</items>

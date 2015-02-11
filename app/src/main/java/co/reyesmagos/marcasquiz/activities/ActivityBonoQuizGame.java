@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,7 +18,7 @@ import co.reyesmagos.marcasquiz.entities.Marca;
 import co.reyesmagos.marcasquiz.mocks.MarcasFactory;
 
 
-public class ActivityBonoQuizGame extends Activity{
+public class ActivityBonoQuizGame extends Activity {
 
     //private Chronometer timeChronometer;
     private TextView timeTxt;
@@ -47,8 +46,7 @@ public class ActivityBonoQuizGame extends Activity{
         numOptions = 4;
 
 
-
-        marca =(Marca) getIntent().getSerializableExtra("Marca");
+        marca = (Marca) getIntent().getSerializableExtra("Marca");
 
         this.gameController = new GameController(this, marca);
         this.iconMarca.setImageDrawable(getResources().getDrawable(marca.getImagesClue().get(4)));
@@ -92,13 +90,13 @@ public class ActivityBonoQuizGame extends Activity{
             @Override
             public void onFinish() {
                 numOptions--;
-                if(numOptions != -1){
+                if (numOptions != -1) {
                     iconMarca.setImageDrawable(getResources().getDrawable(marca.getImagesClue()
                             .get(numOptions)));
                     setCountDownTimer(30000, 1000);
-                }else{
+                } else {
                     timeTxt.setText("Ganó");
-                    Intent i = new Intent(getApplicationContext(), ActivityGameResume.class);
+                    Intent i = new Intent(getApplicationContext(), GridActivity.class);
                     i.putExtra("Marca", marca);
                     numOptions = 0;
                     marca.setWasDiscovered(true);
@@ -121,7 +119,7 @@ public class ActivityBonoQuizGame extends Activity{
             } else {
 
                 Toast.makeText(this, "Felicidades ganó", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(this, ActivityGameResume.class);
+                Intent i = new Intent(this, GridActivity.class);
                 i.putExtra("Marca", marca);
                 marca.setWasDiscovered(true);
                 numOptions = 0;
@@ -131,7 +129,7 @@ public class ActivityBonoQuizGame extends Activity{
             }
         } else {
             Toast.makeText(this, "Felicidades ganó", Toast.LENGTH_LONG).show();
-            Intent i = new Intent(this, ActivityGameResume.class);
+            Intent i = new Intent(this, GridActivity.class);
             i.putExtra("Marca", marca);
             marca.setWasDiscovered(true);
             MarcasFactory.getInstance().updateMarca(marca);

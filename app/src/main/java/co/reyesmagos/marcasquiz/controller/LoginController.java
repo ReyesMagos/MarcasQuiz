@@ -1,9 +1,11 @@
 package co.reyesmagos.marcasquiz.controller;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.text.TextUtils;
 
 import co.reyesmagos.marcasquiz.R;
+import co.reyesmagos.marcasquiz.activities.GridActivity;
 import co.reyesmagos.marcasquiz.activities.LoginActivity;
 import co.reyesmagos.marcasquiz.services.LoginRestful;
 
@@ -12,19 +14,20 @@ import co.reyesmagos.marcasquiz.services.LoginRestful;
  */
 public class LoginController extends AbstractController {
 
+
     public LoginController(Activity activity) {
         super(activity);
     }
 
-    public void logIn(String email, String password){
+    public void logIn(String email, String password) {
         LoginActivity loginActivity = (LoginActivity) getActivity();
-        if(TextUtils.isEmpty(email)){
+        if (TextUtils.isEmpty(email)) {
             showAlertDialog(getActivity().getResources().getString(R.string.error_label),
                     "Debe Ingresar Su Email");
             loginActivity.getTxtEmail().requestFocus();
             return;
         }
-        if(TextUtils.isEmpty(password)){
+        if (TextUtils.isEmpty(password)) {
             showAlertDialog(getActivity().getResources().getString(R.string.error_label),
                     "Debe Ingresar Su Contraseña");
             loginActivity.getTxtPassword().requestFocus();
@@ -37,12 +40,13 @@ public class LoginController extends AbstractController {
 
     }
 
-    public void processRestFulResponse(boolean success,String responseRestFul){
+    public void processRestFulResponse(boolean success, String responseRestFul) {
         dissmissProgressDialog();
-        if(success){
+        if (success) {
 
-            showAlertDialog("Alerta",responseRestFul);
-        }else{
+            showAlertDialog("Alerta", responseRestFul);
+            getActivity().startActivity(new Intent(getActivity().getApplicationContext(), GridActivity.class));
+        } else {
             showAlertDialog(getActivity().getResources().getString(R.string.error_label),
                     "Ocurrio Un Error");
         }
